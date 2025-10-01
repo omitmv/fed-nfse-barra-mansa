@@ -9,7 +9,7 @@ const HeaderContainer = styled.header<{ $sidebarOpen: boolean }>`
   top: 0;
   z-index: 99;
   box-shadow: ${({ theme }) => theme.shadows.sm};
-  margin-left: ${({ $sidebarOpen }) => ($sidebarOpen ? '280px' : '60px')};
+  margin-left: 0px;
   transition: margin-left 0.3s ease;
 `;
 
