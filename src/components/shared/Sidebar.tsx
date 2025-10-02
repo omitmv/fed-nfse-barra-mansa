@@ -26,7 +26,12 @@ const SidebarContainer = styled.div<{ $isOpen: boolean }>`
   top: 0;
   height: 100vh;
   width: ${({ $isOpen }) => ($isOpen ? '280px' : '60px')};
-  background: linear-gradient(180deg, #4c1d95 0%, #5b21b6 50%, #6d28d9 100%);
+  background: linear-gradient(
+    180deg,
+    ${({ theme }) => theme.colors.primary.main} 0%,
+    ${({ theme }) => theme.colors.primary.main} 50%,
+    ${({ theme }) => theme.colors.primary.main} 100%
+  );
   transition: width 0.3s ease;
   z-index: 1000;
   overflow: hidden;
@@ -228,10 +233,26 @@ const menuItems: MenuItem[] = [
     icon: '📊',
   },
   {
+    label: 'Cadastro',
+    icon: '📝',
+    subItems: [
+      {
+        label: 'Empresa',
+        path: '/company-registration',
+        icon: '🏢',
+      },
+      { label: 'Usuário', path: '/config/user', icon: '👤' },
+    ],
+  },
+  {
+    label: 'Relatórios',
+    path: '/reports',
+    icon: '📄',
+  },
+  {
     label: 'Configuração',
     icon: '⚙️',
     subItems: [
-      { label: 'Usuário', path: '/config/user', icon: '👤' },
       { label: 'Sistema', path: '/config/system', icon: '🔧' },
       { label: 'Segurança', path: '/config/security', icon: '🔒' },
     ],
@@ -244,11 +265,6 @@ const menuItems: MenuItem[] = [
       { label: 'Tracking', path: '/advanced/tracking', icon: '📍' },
       { label: 'Automation', path: '/advanced/automation', icon: '🤖' },
     ],
-  },
-  {
-    label: 'Relatórios',
-    path: '/reports',
-    icon: '📄',
   },
   {
     label: 'Ajuda',

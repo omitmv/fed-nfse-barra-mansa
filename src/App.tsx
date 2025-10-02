@@ -12,6 +12,7 @@ import {
   SecurityConfig,
 } from './features/Configuration';
 import { Reports } from './features/Reports';
+import CompanyRegistration from './features/Registration/CompanyRegistration';
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
             <Route path="/config/system" element={<SystemConfig />} />
             <Route path="/config/security" element={<SecurityConfig />} />
             <Route path="/reports" element={<Reports />} />
+            <Route
+              path="/company-registration"
+              element={<CompanyRegistration />}
+            />
           </Routes>
         </Layout>
       </Router>
